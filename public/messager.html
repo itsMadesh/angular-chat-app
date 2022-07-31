@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>multichat</title>
+    <link href="assets/styles/messager.css" rel="stylesheet">
+</head>
+<body ng-app="multichat" ng-controller="messager">
+    <div class="chat-box-container">
+        <div class="chat-box-header">
+            <span class="title">Message</span>
+            <button class="logout" ng-click="logout()">LOG-OUT</button>
+        </div>
+        <div class="chat-box-message-container">
+            <div class="message-container" ng-repeat="mesg in messages">
+                <div ng-if="mesg.name==me" class="message-box">
+                    <div class="person-name">You</div>
+                    <div class="text" ng-bind="mesg.text"></div>
+                    <div class="time" ng-bind="mesg.time"></div>
+                </div>
+                <div ng-if="mesg.name!=me" class="response-message-box">
+                    <div class="person-name" ng-bind="mesg.name"></div>
+                    <div class="text" ng-bind="mesg.text"></div>
+                    <div class="time" ng-bind="mesg.time"></div>
+                </div>
+            </div>
+        </div>
+        <div class="chat-box-footer">
+            <div class="emoji-container">
+                <img src="assets/images/happy.png" height="32" width="32"/>
+            </div>  
+            <div class="input-box">
+                <textarea class="textbox" ng-keyup="checktext()" placeholder="Type a message"></textarea>
+            </div>
+            <div class="send-button" ng-click="send()">
+                <img src="assets/images/send-message.png" height="32" width="32">
+            </div>
+        </div>
+        <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+        <script src="assets/js/messager.js"></script>
+    </div>
+</body>
+</html>

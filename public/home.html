@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultiChat</title>
+    <link rel="stylesheet" href="assets/styles/home.css" />
+</head>
+
+<body ng-app="multichat" ng-controller="home">
+    <div class="group-container">
+        <div class="creation-container">
+            <button  class="group-creation" ng-click="creategroup()">Create Group</button>
+        </div>
+        <div class="oldgroups">
+            <div class="group" ng-repeat="group in oldgroups">
+                <h2>{{group.name}}</h2>
+            </div>
+        </div>   
+    </div>
+    <div class="creategroup-container">
+        <div ng-click="close()" class="close">x</div>
+        <h2 class="title">Create Group</h2>
+        <label for="group-name">Group-name</label>
+        <input type="text" ng-model="groupname" name="group-name">
+        <button type="submit" ng-click="newgroup()">Create</button>
+    </div> 
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="assets/js/home.js"></script>
+
+</html>

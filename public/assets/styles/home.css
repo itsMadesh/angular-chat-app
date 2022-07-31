@@ -1,0 +1,111 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 100%;
+    width: 100%;
+}
+body{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background:linear-gradient(to right,purple,rgb(202, 38, 66),dodgerblue);
+}
+
+.group-container{
+    /* background-color: rgb(255,255,255,0.3); */
+    border-radius: 10px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width:100%;
+}
+
+.group-container .creation-container{
+    padding:10px 0px;
+    display: flex;
+    border-bottom: 1px solid white;
+}
+.group-container .creation-container .group-creation{
+    padding: 5px;
+    border-radius: 5px;
+    margin: auto;
+    background: none;
+    box-shadow:3px 3px 10px white 
+              -3px -3px 10px  black;
+    cursor: pointer;
+}
+.group-container .oldgroups{
+    padding: 10px;
+    height: 400px;
+    overflow-y: scroll;
+}
+
+.group-container .oldgroups .group{ 
+    border-bottom: 1px solid white;
+    padding:10px 0px;
+}
+
+.group-container .oldgroups::-webkit-scrollbar{
+    width: 5px;
+    background-color:lightblue;
+    border-radius: 5px;
+}
+
+.group-container .oldgroups::-webkit-scrollbar-thumb{
+    background-color: gray;
+    border-radius: 5px;
+    background:linear-gradient(purple,rgb(202, 38, 66),dodgerblue);
+}
+
+
+.creategroup-container{
+    position:absolute;
+    display:none;
+    /* border-radius:10px; */
+    background-color: rgb(255,255,255,0.3);
+    flex-direction:column;
+    padding: 10px;
+    box-shadow:inset 2px 2px 3px white,
+                inset -2px -2px 3px black;
+    width:300px;
+}
+
+.creategroup-container .close{
+    margin-left: auto;
+    border: 1px solid black;
+    padding:0px 5px;
+    border-radius: 2px;
+    background-color: white;
+    cursor:pointer;
+}
+.creategroup-container .title{
+    margin:auto;
+    padding:10px 0px;
+    color: white;
+    text-shadow: 2px 2px 4px black;
+}
+
+.creategroup-container label{
+    padding:10px 0px;
+}
+
+.creategroup-container input{
+    outline:none;
+    border: none;
+    background:none;
+    border-bottom: 1px solid black;
+}
+.creategroup-container button{
+    margin:auto;
+    margin-top: 10px;
+    padding:5px;
+    border-radius: 5px;
+    background: none;
+}

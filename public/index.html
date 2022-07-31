@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MultiChat</title>
+    <link rel="stylesheet" href="assets/styles/index.css"/>
+</head>
+
+<body ng-app="multichat" ng-controller="user">
+    <div class="login">
+        <h2 class="title">LOG-IN</h2>
+        <label for="username">Username</label>
+        <input type="text" ng-model="username" name="username" />
+        <label for="password">password</label>
+        <input type="password" ng-model="password" name="password" />
+        <button ng-click="verify()">submit</button>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="assets/js/user.js"></script>
+
+</html>
